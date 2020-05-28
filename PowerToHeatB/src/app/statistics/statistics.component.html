@@ -1,0 +1,31 @@
+<div>
+<h1>Statistics.</h1>
+
+<h3>Active Boilers</h3>
+<table class="table table-dark">
+    <thead>
+    <th>Name</th>
+    <th>Power</th>
+    <th>Current Temperature</th>
+    <th>Work Temperature</th>   
+    <th>State</th>
+    <th>Current Energy</th>
+</thead>
+<tr *ngFor="let item of details"><td>{{item.name}}</td>
+    <td>2400W</td>
+    <td>{{item.currTemp}} °C</td>
+    <td>{{item.setTemp}} °C</td>
+    <td>{{item.state}}</td>
+    <td>{{item.currentEnergie}} </td>
+</tr>
+</table>
+
+<h3>Did you know?</h3>
+<p>The average Belgian family consumes 119L water each day. 55L of this is warm water. For families with an electric boiler this translates to an average cost of €630 per year spend on warm water heating. Thanks to our solution this can be reduced significantly, our algorithm decides when it is best to buy energy so that you have to pay less!</p>
+<button class="btn btn-warning" (click)="showEnergyM()">Show Energy Graph</button>
+<app-line-chart [hidden]="showEnergy"></app-line-chart>
+
+<h3>Did you know?</h3>
+<p>At certain times the energy price can be negative. This happens when there is an overproduction of energy. This excess amount of energy needs to be consumed or sold off to neighbours. Although it's called "sold" the producer with the excess amount of energy needs to pay to get rid of their energy. That's why it's often cheaper to pay the consumer to use more at peak production times.</p>
+
+</div>

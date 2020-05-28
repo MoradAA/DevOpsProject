@@ -1,0 +1,13 @@
+<div class="graphStatus">
+  <div class="statusGraphTitle"> <h2>Real-Time Energy Prices</h2></div>
+  <h4>Enter a date:</h4>
+  <p-calendar [(ngModel)]="SelectedDate" dateFormat="yy-mm-dd" dataType="string"></p-calendar>
+</div>
+
+<p-chart type="line" [data]="data" [options]="options" width="80vw" height="60vh"></p-chart>
+<!-- <ul>
+    <li class="text" *ngFor="let item of Quarters">
+        {{item}}
+    </li>
+  </ul> -->
+<!-- (onDataSelect)="selectData($event)" -->

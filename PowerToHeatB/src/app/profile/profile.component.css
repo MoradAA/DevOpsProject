@@ -1,0 +1,22 @@
+.CSSlogin{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-radius: 2%;
+    table-layout: auto;
+    width: 25%;
+}
+
+table, .DayChoiceCSS{
+    margin-left: 16px;
+}
+
+p, h1, h3, button{
+    margin-left: 32px;
+    margin-right: 32px;
+    margin-top: 8px;
+}
+

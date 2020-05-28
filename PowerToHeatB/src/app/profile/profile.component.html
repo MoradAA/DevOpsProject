@@ -1,0 +1,52 @@
+<h1>Your Profile.</h1>
+
+<h3>Settings about Profile</h3>
+<p>To help decide when your boiler needs to start warming up we need some more information from you. If you know  you will need water at a certain time, you can add a new entry in your usage profile. This entry needs a Name (this is the name of your boiler, default this is your first name.). A start time this is the time you want to start using the warm water (if you don't know a specific time use an estimate a little earlier than you think you'll need it.). An ending time this lets the algorithm know when you won't need the warm water anymore (If you need to estimate this estimate it a little longer than you expect to end using the warm water.). And finally a day, this determines what day of the week you will be needing warm water at the previously mentioned times. </p>
+
+<form action="LoginForm" style="margin-left:32px">
+    <label>Name:</label><br>
+     <input type="text" value="" name="Entryname" [(ngModel)]="entryName" ><br>
+     <label>Starttime:</label><br>
+     <input type="time" value="" name="timeStart" [(ngModel)]="startTime" ><br>
+     <label>Stoptime:</label><br>
+     <input type="time" value="" name="timeStop" [(ngModel)]="stopTime"><br>
+     
+     
+     <label for="days">Days: </label>
+    <br>
+     <select id="days" [(ngModel)]="day" name = "day">
+         <option value="Monday">Monday</option>
+         <option value="Tuesday">Tuesday</option>
+         <option value="Wednesday">Wednesday</option>
+         <option value="Thursday">Thursday</option>
+         <option value="Friday">Friday</option>
+         <option value="Saturday">Saturday</option>
+         <option value="Sunday">Sunday</option>
+     </select>
+   
+ 
+ </form>
+   <button (click)="SaveUserSettings(db)" class="btn btn-success">Save</button>
+
+
+<br>
+
+<h3>Why this is important to us</h3>
+<p>With the help of this user profile we can adapt your boiler to be more efficient. The decision algorithm used to control your boiler will use this user profile to determine when to activate or when to deactivate. Thanks to this algorithm we can calculate when it is most efficient (and cheapest) to buy energy and activate your boiler. This will not only help the ennvironment but also save you money.</p>
+
+<div class="CSSlogin" [hidden]=false>
+<p>Login</p>
+
+<form action="LoginForm">
+    <label>Username:</label><br>
+    <input type="text" value="" name="user" [(ngModel)]="username" ><br>
+    <label>Password:</label><br>
+    <input type="password" value="" name="pass" [(ngModel)]="password"><br><br>   
+    <input type="checkbox" value="" name="check" [(ngModel)]="checkBool" ><br>
+  </form>
+  <button (click)="ObserveCredentials()">Login</button>
+  <button (click)="GeneratePassword(7,db)">New password</button>
+</div>
+<p *ngIf ="loggedInAs">logged in as: {{loggedInAs}}</p>
+
+
