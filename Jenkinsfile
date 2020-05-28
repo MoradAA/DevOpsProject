@@ -1,5 +1,6 @@
 pipeline {
-    agent { any  }
+    agent any
+    tools {nodejs "NodeJS"}
 
     environment {
         CI = 'true'
