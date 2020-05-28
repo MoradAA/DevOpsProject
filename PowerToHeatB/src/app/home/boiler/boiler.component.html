@@ -1,0 +1,26 @@
+<div class="statusBoiler">
+   <div class="statusBoilerTitle"> <h1>Your Boiler</h1></div>
+    <div class="statusBoilerImg" class="imgCSS"> <img src="{{imgSourceBoiler}}"  width="200px" height="200px"></div>
+    <div class="statusBoilerInfo"><h3 class="infoCSS">{{nameBoiler}}</h3>
+    <p>{{descriptionBoiler}}</p>
+    <h3>Your boiler is currently {{stateBoiler}}</h3>
+
+    <table class="table table-dark">
+        <thead>
+        <th>Capacity</th>
+        <th>Power</th>
+        <th>Current Temperature</th>
+        <th>Minimum Temperature</th>
+        <th>Maximum Temperature</th>
+        <th>Work Temperature</th>   
+    </thead>
+    <tr><td>{{boilerCapacity}} L</td>
+        <td>{{powerBoiler}} </td>
+        <td>{{currentTemperatureBoiler}} °C</td>
+        <td>{{minimumTemperatureBoiler}} °C</td>
+        <td>{{maximumTemperatureBoiler}} °C</td>
+        <td>{{preferredTemperatureBoiler}} °C</td></tr>
+    </table>
+    
+    <button [routerLink]="['/settings']"class="btn btn-outline-primary">Change Settings</button>
+</div>

@@ -1,0 +1,18 @@
+.ImageCSS{
+    height: 100px;
+    width: 100px;
+}
+.NAVCSS{
+    position: absolute;
+    right: 10px;
+    top: 50px;
+    width: auto;
+    height: auto;
+}
+.loginSection{
+    position: absolute;
+    right: 10px;
+    top: 0px;
+    width: auto;
+    height: auto;
+}

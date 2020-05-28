@@ -1,0 +1,30 @@
+<div class="wrapper">
+<h1 style="font-weight: bold;">Your boiler settings.</h1>
+
+<h3>Status boiler</h3>
+<label class="switch">
+    <input type="checkbox" [(ngModel)]="statusBoilerSetting">
+    <span class="slider round"></span>
+  </label>
+
+  <h3>Maximum Temperature</h3>
+  <p>The maximum temperature of your boiler can not be higher than 90°C</p><button [routerLink]="['/about']"class="btn btn-outline-primary">Learn More</button>
+  <br>
+  <input type="number" [(ngModel)]="maxTempBoilerSetting">
+  <h3>Minimum Temperature</h3>
+  <p>The minimum temperature of your boiler can not be lower than 55°C</p><button [routerLink]="['/about']"class="btn btn-outline-primary">Learn More</button>
+  <br>
+  <input type="number" [(ngModel)]="minTempBoilerSetting">
+
+  <h3>Preferred Temperature</h3>
+  <p>This temperature is the working temperature of your boiler in idle active state.</p>
+  <p>The preferred temperature of your boiler can not be higher than 90°C and lower than 55°C</p>
+  <button [routerLink]="['/about']"class="btn btn-outline-primary">Learn More</button>
+  <br>
+  <input type="number" [(ngModel)]="prefTempBoilerSetting">
+
+<br><br>
+<label [hidden]="invalidInput">One or more of the input fields have invalid numbers.</label>
+<button  (click)="updateSettings()" class="btn btn-outline-primary" [routerLink]="['/home']">Save Settings</button>
+
+</div>
