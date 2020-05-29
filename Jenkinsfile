@@ -18,7 +18,7 @@ pipeline {
 
             steps {
                 echo "Building solution"
-                sh 'npm build'
+                sh 'npm run build'
             }
         }
     }
