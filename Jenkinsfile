@@ -22,14 +22,15 @@ pipeline {
             }
         }
     }
-    
+            
     post {
         always {
-            echo 'Sending e-mail'
+            echo 'Sending email with build-result.'
             
-            mail to: 'scannableyew@gmail.com',
-                subject: "${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}\n More info at: ${env.BUILD_URL}",
-                body: "Jenkins Build ${currentBuild.currentResult}: Job ${env.JOB_NAME}"
+            emailext body: "${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}\n More info at: ${env.BUILD_URL}",
+                recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']],
+                subject: "Jenkins Build ${currentBuild.currentResult}: Job ${env.JOB_NAME}"
+            
         }
     }
 }
