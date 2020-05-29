@@ -27,7 +27,7 @@ pipeline {
         always {
             echo 'Sending e-mail'
             
-            mail to: 'morad.aouladabdenabi@student.ap.be',
+            mail to: 'scannableyew@gmail.com',
                 subject: "${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}\n More info at: ${env.BUILD_URL}",
                 body: "Jenkins Build ${currentBuild.currentResult}: Job ${env.JOB_NAME}"
         }
